@@ -1,0 +1,12 @@
+body {
+	background-color: #fee;
+	font-family: sans-serif;
+}
+
+h1, h2, h3 {
+	font-family: serif;
+}
+
+#highlight {
+	color: red;
+}
