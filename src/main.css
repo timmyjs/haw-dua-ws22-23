@@ -1,15 +1,3 @@
 h1 {
 	color: #bf0b22;
 }
-
-.accordion-title {
-	cursor: pointer;
-}
-
-.accordion-title ~ p {
-	display: none;
-}
-
-.accordion-title.clicked ~ p {
-	display: block;
-}

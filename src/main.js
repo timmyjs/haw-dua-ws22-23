@@ -1,19 +1,30 @@
 /**
- * WS 22/23 DuA - Übungsaufgaben: DOM & Events - Accordion
+ * WS 22/23 DuA - Übungsaufgaben: DOM & Events - ToDo Liste
  */
-console.log("%cÜbungsaufgabe: DOM & Events - Accordion", "color: #bf0b22");
+console.log("%cÜbungsaufgabe: DOM & Events - ToDo Liste", "color: #bf0b22");
 console.log("%c--", "color: #bf0b22");
 
-const accordionTitle = document.querySelectorAll(".accordion-title");
+const todoInput = document.getElementById("todo-input");
+const todoList = document.getElementById("todo-list");
+const todoSubmit = document.getElementById("todo-submit");
 
-for (let n = 0; n < accordionTitle.length; n += 1) {
-	accordionTitle[n].addEventListener("click", function (ev) {
-		const element = ev.currentTarget;
+let todos = ["Foo", "Bar", "Baz"];
 
-		if (element.classList.contains("clicked")) {
-			element.classList.remove("clicked");
-		} else {
-			element.classList.add("clicked");
-		}
-	});
+function renderTodos() {
+	todoList.innerHTML = "";
+
+	for (let n = 0; n < todos.length; n += 1) {
+		const listItem = document.createElement("li");
+
+		listItem.innerHTML = todos[n];
+
+		todoList.appendChild(listItem);
+	}
 }
+
+renderTodos();
+
+todoSubmit.addEventListener("click", function () {
+	todos.push(todoInput.value);
+	renderTodos();
+});
