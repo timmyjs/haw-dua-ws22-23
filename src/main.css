@@ -1,3 +1,22 @@
 h1 {
 	color: #bf0b22;
 }
+
+.cell {
+	background-color: lightblue;
+	width: 100px;
+	font-size: 18pt;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.cell-entered {
+	background-color: black;
+	color: white;
+	font-size: 18pt;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 100px;
+}
