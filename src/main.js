@@ -1,17 +1,19 @@
 /**
- * WS 22/23 DuA - Übungsaufgaben: DOM & Events - Table
+ * WS 22/23 DuA - Übungsaufgaben: DOM & Events - Accordion
  */
-console.log("%cÜbungsaufgabe: DOM & Events - Table", "color: #bf0b22");
+console.log("%cÜbungsaufgabe: DOM & Events - Accordion", "color: #bf0b22");
 console.log("%c--", "color: #bf0b22");
 
-const cells = document.querySelectorAll(".cell");
+const accordionTitle = document.querySelectorAll(".accordion-title");
 
-for (let n = 0; n < cells.length; n += 1) {
-	cells[n].addEventListener("mouseenter", function (ev) {
+for (let n = 0; n < accordionTitle.length; n += 1) {
+	accordionTitle[n].addEventListener("click", function (ev) {
 		const element = ev.currentTarget;
-		element.classList.add("cell-entered");
-		setTimeout(function () {
-			element.classList.remove("cell-entered");
-		}, 1000);
+
+		if (element.classList.contains("clicked")) {
+			element.classList.remove("clicked");
+		} else {
+			element.classList.add("clicked");
+		}
 	});
 }
