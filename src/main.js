@@ -1,46 +1,32 @@
-// Aufgabe 1
-const zahl = 42;
+/**
+ * WS 22/23 DuA - Übungsaufgaben: DOM & Events - Counter
+ */
+ console.log("%cÜbungsaufgabe: DOM & Events - Counter", "color: #bf0b22");
+ console.log("%c--", "color: #bf0b22");
 
-console.log(zahl);
+ const increaseButton = document.getElementById("increase");
+ const decreaseButton = document.getElementById("decrease");
 
-const zeichenkette = "Thomas";
+ const result = document.getElementById("result");
 
-console.log(zeichenkette);
+ let count = parseInt(result.innerHTML);
 
-const flag = false;
+ function updateHtml(updatedCount) {
+	 result.innerHTML = updatedCount;
 
-console.log(flag);
+	 if (updatedCount === 0) {
+		 decreaseButton.disabled = true;
+	 } else {
+		 decreaseButton.disabled = false;
+	 }
+ }
 
-const nixDa = undefined;
+ increaseButton.addEventListener("click", function () {
+	 count += 1;
+	 updateHtml(count);
+ });
 
-console.log(nixDa);
-
-const nullDa = null;
-
-console.log(nullDa);
-
-let ichBinLeer;
-
-console.log(ichBinLeer);
-
-// console.log(baz);
-// Kommentar
-// Aufgabe 2
-{
-	const foo = 42;
-
-	const bar = "5";
-
-	console.log(foo + bar);
-
-	console.log(foo + parseInt(bar));
-}
-
-// Aufgabe 3
-{
-	const foo = "Wintersemester";
-
-	const bar = (22).toString() + (23).toString();
-
-	console.log(foo + bar);
-}
+ decreaseButton.addEventListener("click", function () {
+	 count -= 1;
+	 updateHtml(count);
+ });
